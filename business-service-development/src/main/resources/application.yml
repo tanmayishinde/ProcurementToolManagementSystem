@@ -1,0 +1,26 @@
+server:
+  port: 8093
+  servlet:
+    context-path: /supplier
+    multipart:
+      max-file-size: 3MB
+      max-request-size: 3MB
+management:
+  endpoint:
+    metrics:
+      enabled: true
+  endpoints:
+    web:
+      exposure:
+        include: health,info,prometheus
+    prometheus:
+      enabled: true
+  metrics:
+    export:
+      prometheus:
+        enabled: true
+    health:
+      show-details: always
+spring:
+  jackson:
+    default-property-inclusion: non_null
